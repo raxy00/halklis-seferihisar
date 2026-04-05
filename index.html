@@ -18,7 +18,7 @@
         .social-sidebar .ig { background: #E1306C; }
         .social-sidebar .wp { background: #25D366; }
 
-        /* HEADER & MENÜ (Atatürk'ün Solunda) */
+        /* HEADER & MENÜ */
         header { background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); padding: 5px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e30113; }
         .header-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .brand-text { font-weight: 800; font-size: 0.9rem; color: #fff; flex: 1; }
@@ -29,46 +29,59 @@
         nav ul li a:hover { color: #e30113; }
         .atam-img { height: 65px; border-radius: 4px; border: 1px solid #333; }
 
-        /* BANNER */
-        .main-banner { width: 100%; height: 90vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('image (2).jpg'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; position: relative; text-align: center; }
-        .btn-katil { padding: 16px 45px; background-color: #e30113; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; border: none; box-shadow: 0 10px 30px rgba(227, 1, 19, 0.4); transition: 0.3s; }
-        .btn-katil:hover { transform: scale(1.05); background: #ff0000; }
+        /* BANNER (MASAÜSTÜ) */
+        .main-banner { 
+            width: 100%; 
+            height: 90vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('image (2).jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            position: relative; 
+        }
+        .btn-katil { padding: 16px 45px; background-color: #e30113; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; border: none; box-shadow: 0 10px 30px rgba(227, 1, 19, 0.4); transition: 0.3s; z-index: 10; }
 
-        /* SECTION AYARLARI */
+        /* MODAL & SECTION AYARLARI */
         section { padding: 80px 20px; }
         h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; color: #e30113; font-weight: 800; }
-
-        /* GRID YAPILARI */
         .days-grid, .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .day-card, .principle-card { background: #111; padding: 30px; border-radius: 20px; border-left: 5px solid #e30113; transition: 0.3s; text-align: center; border-top: 1px solid #222; }
-        .principle-card i { font-size: 2rem; color: #e30113; margin-bottom: 15px; }
-
-        /* MODAL & FORM */
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); justify-content: center; align-items: center; padding: 15px; }
-        .modal-content { background: #111; padding: 35px; border-radius: 25px; width: 100%; max-width: 450px; border: 2px solid #e30113; position: relative; }
-        .contact-input { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 12px; margin-bottom: 15px; font-size: 16px; outline: none; }
-        .contact-input:focus { border-color: #e30113; }
+        .day-card, .principle-card { background: #111; padding: 30px; border-radius: 20px; border-left: 5px solid #e30113; text-align: center; border-top: 1px solid #222; }
 
         /* FOOTER */
         footer { background: #000; padding: 70px 20px 30px; border-top: 3px solid #e30113; }
         .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .footer-box h4 { color: #e30113; margin-bottom: 25px; font-weight: 800; text-transform: uppercase; }
-        .footer-box a { color: #ccc; text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: 0.3s; }
-        .footer-box a:hover { color: #e30113; padding-left: 5px; }
-
+        .footer-box a { color: #ccc; text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; }
         .copyright-area { max-width: 1200px; margin: 50px auto 0; padding-top: 25px; border-top: 1px solid #222; display: flex; justify-content: space-between; align-items: center; }
-        .designer-info { color: #888; font-size: 0.85rem; }
-        .copyright-text { color: #444; font-size: 0.75rem; }
 
-        /* MOBİL UYUM */
+        /* MOBİL UYUM (BANNER SORUNU BURADA ÇÖZÜLDÜ) */
         @media (max-width: 768px) {
             .header-container { flex-direction: column; gap: 10px; padding: 10px; }
-            .nav-and-photo { width: 100%; justify-content: space-between; border-top: 1px solid #222; pt: 10px; }
-            nav ul { gap: 12px; }
+            .nav-and-photo { width: 100%; justify-content: space-between; border-top: 1px solid #222; padding-top: 10px; }
             nav ul li a { font-size: 0.65rem; }
             .atam-img { height: 50px; }
-            .principles-grid { grid-template-columns: 1fr 1fr; }
+
+            /* MOBİL BANNER DÜZENLEMESİ */
+            .main-banner { 
+                height: 50vh; /* Mobilde aşırı uzun olmasın */
+                background-size: contain; /* Resmi kırpmaz, tamamını sığdırır */
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-color: #0a0a0a; /* Resim bitince siyah devam etsin */
+                display: flex;
+                align-items: flex-end; /* Butonu resmin altına yaklaştırır */
+                padding-bottom: 30px;
+            }
+            .btn-katil { font-size: 0.9rem; padding: 12px 30px; width: 80%; }
+            .principles-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .principle-card { padding: 15px; }
+            .copyright-area { flex-direction: column; text-align: center; gap: 10px; }
         }
+
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); justify-content: center; align-items: center; padding: 15px; }
+        .modal-content { background: #111; padding: 35px; border-radius: 25px; width: 100%; max-width: 450px; border: 2px solid #e30113; position: relative; }
+        .contact-input { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 12px; margin-bottom: 15px; font-size: 16px; outline: none; }
     </style>
 </head>
 <body>
@@ -95,7 +108,7 @@
     </header>
 
     <div class="main-banner">
-        <img src="bayrak.gif" alt="Türk Bayrağı" style="position: absolute; top: 15px; left: 15px; width: 70px;">
+        <img src="bayrak.gif" alt="Türk Bayrağı" style="position: absolute; top: 15px; left: 15px; width: 60px;">
         <button class="btn-katil" onclick="openModal()">BİZE KATIL</button>
     </div>
 
@@ -147,7 +160,7 @@
         <div style="max-width:650px; margin:0 auto; background:#111; padding:40px; border-radius:25px; border: 1px solid #222;">
             <form action="https://formspree.io/f/xaqllkyb" method="POST">
                 <input type="text" name="İsim" class="contact-input" placeholder="Ad Soyad" required>
-                <input type="email" name="Email" class="contact-input" placeholder="E-Posta Adresiniz" required>
+                <input type="email" name="Email" class="contact-input" placeholder="E-Posta" required>
                 <textarea name="Mesaj" class="contact-input" rows="5" placeholder="Mesajınız..." required style="resize:none;"></textarea>
                 <button type="submit" style="width:100%; padding:16px; background:#e30113; color:#fff; border:none; font-weight:800; border-radius:12px; cursor:pointer;">MESAJI GÖNDER</button>
             </form>
@@ -158,7 +171,7 @@
         <div class="footer-grid">
             <div class="footer-box">
                 <h4>Halk-Lis Seferihisar</h4>
-                <p style="color:#888; font-size:0.9rem;">Aydınlık bir gelecek için Seferihisar gençliği omuz omuza.</p>
+                <p style="color:#888; font-size:0.9rem;">Gençlik geleceğin teminatıdır.</p>
             </div>
             <div class="footer-box">
                 <h4>Hızlı Bağlantılar</h4>
@@ -168,15 +181,14 @@
                 <a href="#iletisim">Bize Ulaşın</a>
             </div>
             <div class="footer-box">
-                <h4>İletişim & Konum</h4>
-                <p style="color:#ccc; font-size:0.9rem; margin-bottom:10px;"><i class="fas fa-user-circle" style="color:#e30113;"></i> H. Ege KASAPOĞLU</p>
-                <p style="color:#ccc; font-size:0.9rem;"><i class="fas fa-map-marker-alt" style="color:#e30113;"></i> Seferihisar / İZMİR</p>
-                <a href="https://www.instagram.com/33ege35/" target="_blank" style="margin-top:15px; color:#E1306C;"><i class="fab fa-instagram"></i> Kişisel Instagram</a>
+                <h4>İletişim</h4>
+                <p style="color:#ccc; font-size:0.9rem; margin-bottom:10px;">H. Ege KASAPOĞLU</p>
+                <p style="color:#ccc; font-size:0.9rem;">Seferihisar / İZMİR</p>
             </div>
         </div>
         <div class="copyright-area">
-            <div class="designer-info">Tasarlayan: <b style="color:#e30113;">H. Ege KASAPOĞLU</b></div>
-            <div class="copyright-text">© 2026 Halkçı Liseler Seferihisar. Tüm Hakları Saklıdır.</div>
+            <div style="color: #888; font-size: 0.85rem;">Tasarlayan: <b style="color:#e30113;">H. Ege KASAPOĞLU</b></div>
+            <div style="color: #444; font-size: 0.75rem;">© 2026 Tüm Hakları Saklıdır.</div>
         </div>
     </footer>
 
@@ -185,12 +197,7 @@
         function closeModal() { document.getElementById('joinModal').style.display = 'none'; }
         window.onclick = function(event) { if (event.target == document.getElementById('joinModal')) closeModal(); }
 
-        const quotes = [
-            "Bütün ümidim gençliktedir.", 
-            "Türk genci, devrimlerin bekçisidir.", 
-            "Ey Türk gençliği! Birinci vazifen cumhuriyeti korumaktır.",
-            "Gençler, cesaretimizi takviye ve idame eden sizlersiniz."
-        ];
+        const quotes = ["Bütün ümidim gençliktedir.", "Türk genci, devrimlerin bekçisidir.", "Ey Türk gençliği! Birinci vazifen cumhuriyeti korumaktır."];
         const quoteText = quotes[Math.floor(Math.random() * quotes.length)];
         const textElement = document.getElementById('typewriter-text');
         let index = 0;
