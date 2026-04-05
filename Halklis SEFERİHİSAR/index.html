@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halkçı Liseler Seferihisar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #e30613;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .header-logo { height: 60px; filter: drop-shadow(0 0 5px rgba(227, 6, 19, 0.3)); }
+
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 15px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover { color: #e30613; }
+
+        /* BANNER */
+        .main-banner {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('image (2).jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .banner-content { 
+            margin-top: 260px;
+            margin-right: 8%;
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-katil {
+            padding: 16px 45px;
+            background-color: #e30613;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(227, 6, 19, 0.4);
+            border: 2px solid #e30613;
+            display: inline-block;
+        }
+
+        .btn-katil:hover { 
+            background-color: transparent;
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        /* İSTATİSTİK ŞERİDİ */
+        .stats-bar {
+            background: #e30613;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item { text-align: center; color: white; }
+        .stat-item h4 { font-size: 2rem; font-weight: 800; }
+        .stat-item p { font-size: 0.9rem; text-transform: uppercase; opacity: 0.9; }
+
+        /* İLKELER */
+        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        
+        .section-title { 
+            font-size: 3rem; 
+            margin-bottom: 60px; 
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            width: 50%;
+            height: 5px;
+            background: #e30613;
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .ilkeler-konteynir { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .ilke-kart { 
+            background: #121212; 
+            padding: 40px; 
+            border-radius: 20px; 
+            border-bottom: 4px solid transparent;
+            transition: 0.4s;
+            text-align: left;
+        }
+        .ilke-kart:hover { 
+            background: #1a1a1a;
+            border-color: #e30613;
+            transform: translateY(-15px);
+        }
+        .ilke-kart h3 { color: #e30613; margin-bottom: 15px; font-size: 1.6rem; }
+        .ilke-kart p { line-height: 1.6; color: #ccc; }
+
+        /* FOOTER */
+        footer { 
+            background: #111; 
+            padding: 60px 0 20px; 
+            border-top: 1px solid #222;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .footer-box h4 { color: #fff; margin-bottom: 20px; border-left: 4px solid #e30613; padding-left: 10px; }
+        .footer-box a { color: #888; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
+        .footer-box a:hover { color: #e30613; padding-left: 5px; }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .banner-content { margin-right: 0; margin-top: 220px; width: 100%; }
+            .main-banner { justify-content: center; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="unnamed.jpg" alt="Logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#ilkeler">İlkelerimiz</a></li>
+                    <li><a href="https://www.instagram.com/halklisseferihisar/" target="_blank">Instagram</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeslt4ARUFqvOgLZ4KMhhcwJ2nwXfQ_NpABO5GnmnWndO1aAg/viewform?usp=publish-editor" target="_blank">Üye Ol</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-banner">
+        <div class="banner-content">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslt4ARUFqvOgLZ4KMhhcwJ2nwXfQ_NpABO5GnmnWndO1aAg/viewform?usp=publish-editor" target="_blank" class="btn-katil">BİZE KATIL</a>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item"><h4>50+</h4><p>AKTİF ÜYE</p></div>
+        <div class="stat-item"><h4>10+</h4><p>YILLIK ETKİNLİK</p></div>
+        <div class="stat-item"><h4>100%</h4><p>GENÇ GÜCÜ</p></div>
+    </div>
+
+    <section id="ilkeler">
+        <h2 class="section-title">Neye İnanıyoruz?</h2>
+        <div class="ilkeler-konteynir">
+            <div class="ilke-kart">
+                <h3>Cumhuriyetçilik</h3>
+                <p>Gençliğin sesinin yönetimde en güçlü şekilde duyulması gerektiğine inanıyoruz.</p>
+            </div>
+            <div class="ilke-kart">
+                <h3>Halkçılık</h3>
+                <p>Eğitimde ve sosyal hayatta tam eşitlik için mücadele ediyoruz.</p>
+            </div>
+            <div class="ilke-kart">
+                <h3>Laiklik</h3>
+                <p>Bilimin ve aklın ışığında, özgür bir gelecek düşlüyoruz.</p>
+            </div>
+            <div class="ilke-kart">
+                <h3>Milliyetçilik</h3>
+                <p>Vatanımıza ve değerlerimize sahip çıkarak evrensel bir vizyon kuruyoruz.</p>
+            </div>
+            <div class="ilke-kart">
+                <h3>Devletçilik</h3>
+                <p>Güçlü bir gelecek için güçlü bir dayanışma ağını savunuyoruz.</p>
+            </div>
+            <div class="ilke-kart">
+                <h3>Devrimcilik</h3>
+                <p>Her gün daha iyisi için değişmeye ve gelişmeye hazırız.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h4>Halk-Lis Seferihisar</h4>
+                <p style="color: #666; font-size: 0.9rem;">Gelecek biziz, biz geleceğiz! Seferihisar'ın aydınlık gençleri burada buluşuyor.</p>
+            </div>
+            <div class="footer-box">
+                <h4>Hızlı Bağlantılar</h4>
+                <a href="#">Ana Sayfa</a>
+                <a href="#ilkeler">İlkelerimiz</a>
+                <a href="https://www.instagram.com/halklisseferihisar/">Instagram</a>
+            </div>
+            <div class="footer-box">
+                <h4>İletişim</h4>
+                <a href="https://www.instagram.com/33ege35/">H. Ege KASAPOĞLU</a>
+                <p style="color: #666; font-size: 0.9rem;">Seferihisar, İzmir</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Tüm Hakları Saklıdır. Tasarlayan: **H. Ege KASAPOĞLU**
+        </div>
+    </footer>
+
+</body>
+</html>
