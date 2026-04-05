@@ -3,247 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halkçı Liseler Seferihisar</title>
+    <title>Halkçı Liseler Seferihisar | Gelecek Biziz!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #0a0a0a; color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
 
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+        /* WHATSAPP BUTONU */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+            font-size: 30px; box-shadow: 2px 2px 15px rgba(0,0,0,0.4); z-index: 1000;
+            display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
         /* HEADER */
         header {
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid #e30613;
+            background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px);
+            padding: 5px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e30113;
         }
-
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
         }
-
-        .header-logo { height: 60px; filter: drop-shadow(0 0 5px rgba(227, 6, 19, 0.3)); }
-
-        nav ul { list-style: none; display: flex; }
-        nav ul li { margin-left: 25px; }
-        nav ul li a { 
-            color: #fff; 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 15px;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-        nav ul li a:hover { color: #e30613; }
+        .brand-text { font-weight: 800; font-size: 1.2rem; color: #fff; }
+        .header-right { display: flex; align-items: center; gap: 20px; }
+        nav ul { list-style: none; display: flex; align-items: center; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: 600; font-size: 13px; transition: 0.3s; text-transform: uppercase; }
+        nav ul li a:hover { color: #e30113; }
+        .atam-img { height: 70px; border-radius: 4px; }
 
         /* BANNER */
         .main-banner {
-            width: 100%;
-            height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('image (2).jpg'); 
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
+            width: 100%; height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('image (2).jpg'); 
+            background-size: cover; background-position: center;
+            display: flex; justify-content: center; align-items: center;
         }
-
-        .banner-content { 
-            margin-top: 260px;
-            margin-right: 8%;
-            text-align: center;
-            animation: fadeInDown 1s ease;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .btn-katil {
-            padding: 16px 45px;
-            background-color: #e30613;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            transition: 0.4s;
-            box-shadow: 0 10px 30px rgba(227, 6, 19, 0.4);
-            border: 2px solid #e30613;
-            display: inline-block;
+            padding: 18px 50px; background-color: #e30113; color: #fff;
+            text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.2rem;
+            transition: 0.4s; box-shadow: 0 10px 30px rgba(227, 1, 19, 0.4);
         }
+        .btn-katil:hover { transform: scale(1.05); background-color: #ff0000; }
 
-        .btn-katil:hover { 
-            background-color: transparent;
-            transform: scale(1.1) rotate(2deg);
-        }
+        /* ATATÜRK SÖZÜ KARTI */
+        .quote-section { padding: 60px 20px; text-align: center; background: #111; margin: 40px auto; max-width: 900px; border-radius: 20px; border: 1px solid #222; }
+        #ata-quote { font-style: italic; font-size: 1.3rem; color: #fff; margin-bottom: 15px; line-height: 1.6; }
+        .quote-author { color: #e30113; font-weight: 800; letter-spacing: 2px; }
+
+        /* BİZ KİMİZ */
+        .about-section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .about-box { background: #111; padding: 40px; border-radius: 20px; border: 1px solid #222; }
+        .about-box h2 { font-size: 2.5rem; color: #e30113; margin-bottom: 20px; }
+        .about-box p { font-size: 1.1rem; line-height: 1.8; color: #ccc; }
 
         /* İSTATİSTİK ŞERİDİ */
-        .stats-bar {
-            background: #e30613;
-            padding: 30px 0;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
+        .stats-bar { background: #111; padding: 40px 0; display: flex; justify-content: center; gap: 60px; border-bottom: 1px solid #222; }
+        .stat-item { text-align: center; }
+        .stat-item h4 { font-size: 2.5rem; color: #e30113; font-weight: 800; }
+        .stat-item p { font-size: 0.8rem; color: #888; text-transform: uppercase; }
 
-        .stat-item { text-align: center; color: white; }
-        .stat-item h4 { font-size: 2rem; font-weight: 800; }
-        .stat-item p { font-size: 0.9rem; text-transform: uppercase; opacity: 0.9; }
-
-        /* İLKELER */
-        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        
-        .section-title { 
-            font-size: 3rem; 
-            margin-bottom: 60px; 
-            position: relative;
-            display: inline-block;
+        /* BİZE ULAŞIN FORMU */
+        .contact-section { padding: 80px 20px; background: #0a0a0a; text-align: center; }
+        .contact-container { max-width: 600px; margin: 0 auto; text-align: left; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #222; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: #888; }
+        .form-group input, .form-group textarea { 
+            width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; 
+            border-radius: 8px; color: #fff; outline: none; transition: 0.3s;
         }
-        .section-title::after {
-            content: '';
-            width: 50%;
-            height: 5px;
-            background: #e30613;
-            position: absolute;
-            bottom: -10px;
-            left: 25%;
+        .form-group input:focus { border-color: #e30113; }
+        .btn-gonder { 
+            width: 100%; padding: 15px; background: #e30113; color: #fff; border: none; 
+            border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s;
         }
-
-        .ilkeler-konteynir { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-        }
-
-        .ilke-kart { 
-            background: #121212; 
-            padding: 40px; 
-            border-radius: 20px; 
-            border-bottom: 4px solid transparent;
-            transition: 0.4s;
-            text-align: left;
-        }
-        .ilke-kart:hover { 
-            background: #1a1a1a;
-            border-color: #e30613;
-            transform: translateY(-15px);
-        }
-        .ilke-kart h3 { color: #e30613; margin-bottom: 15px; font-size: 1.6rem; }
-        .ilke-kart p { line-height: 1.6; color: #ccc; }
+        .btn-gonder:hover { background: #ff0000; transform: translateY(-2px); }
 
         /* FOOTER */
-        footer { 
-            background: #111; 
-            padding: 60px 0 20px; 
-            border-top: 1px solid #222;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            padding: 0 20px;
-            margin-bottom: 40px;
-        }
-
-        .footer-box h4 { color: #fff; margin-bottom: 20px; border-left: 4px solid #e30613; padding-left: 10px; }
-        .footer-box a { color: #888; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
-        .footer-box a:hover { color: #e30613; padding-left: 5px; }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #222;
-            padding-top: 20px;
-            color: #555;
-            font-size: 0.8rem;
-        }
+        footer { background: #000; padding: 60px 20px 20px; border-top: 3px solid #e30113; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; }
+        .footer-box h4 { margin-bottom: 20px; color: #e30113; text-transform: uppercase; }
+        .footer-box a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .footer-box a:hover { color: #fff; }
+        .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; color: #444; font-size: 0.8rem; }
 
         @media (max-width: 768px) {
-            .banner-content { margin-right: 0; margin-top: 220px; width: 100%; }
-            .main-banner { justify-content: center; }
-            nav ul { display: none; }
+            .header-container { flex-direction: column; padding: 10px; }
+            .stats-bar { gap: 20px; flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
+    <a href="https://www.whatsapp.com/channel/0029VazlQzEBqbr0iQy2uZ2n" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header>
         <div class="header-container">
-            <img src="unnamed.jpg" alt="Logo" class="header-logo">
-            <nav>
-                <ul>
-                    <li><a href="#">Ana Sayfa</a></li>
-                    <li><a href="#ilkeler">İlkelerimiz</a></li>
-                    <li><a href="https://www.instagram.com/halklisseferihisar/" target="_blank">Instagram</a></li>
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeslt4ARUFqvOgLZ4KMhhcwJ2nwXfQ_NpABO5GnmnWndO1aAg/viewform?usp=publish-editor" target="_blank">Üye Ol</a></li>
-                </ul>
-            </nav>
+            <div class="brand-text">Gelecek Biziz, Biz Geleceğiz!</div>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="#">Ana Sayfa</a></li>
+                        <li><a href="https://www.instagram.com/halklisseferihisar/" target="_blank">Instagram</a></li>
+                        <li><a href="#iletisim">Bize Ulaşın</a></li>
+                    </ul>
+                </nav>
+                <img src="atam!.jpg" alt="Atatürk" class="atam-img">
+            </div>
         </div>
     </header>
 
     <div class="main-banner">
-        <div class="banner-content">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslt4ARUFqvOgLZ4KMhhcwJ2nwXfQ_NpABO5GnmnWndO1aAg/viewform?usp=publish-editor" target="_blank" class="btn-katil">BİZE KATIL</a>
+        <a href="#iletisim" class="btn-katil">BİZE ULAŞIN</a>
+    </div>
+
+    <div class="quote-section">
+        <p id="ata-quote">"Ey yükselen yeni nesil, gelecek sizindir. Cumhuriyeti biz kurduk; onu yükseltecek ve sürdürecek sizsiniz."</p>
+        <p class="quote-author">MUSTAFA KEMAL ATATÜRK</p>
+    </div>
+
+    <section class="about-section">
+        <div class="about-box">
+            <h2>Biz Kimiz?</h2>
+            <p>Halkçı Liseliler, başta lise öğrencileri ve gençler olmak üzere toplumun ve bireylerin sorunlarını çözümler ışığında gündeme getiren, daha güzel bir Türkiye için çabalayan, kendi arasında sosyokültürel etkinlikler düzenleyerek yeni arkadaşlık bağları oluşturmayı hedefleyen Atatürkçü, yenilikçi, sosyal demokrat, özgürlükçü ve aydın gençlerin bulunmakta olduğu ve görevler aldığı sosyo-siyasi bir kuruluştur.</p>
+        </div>
+    </section>
+
+    <div class="stats-bar" id="stats-section">
+        <div class="stat-item">
+            <h4 class="counter" data-target="500">0</h4>
+            <p>AKTİF ÜYE</p>
+        </div>
+        <div class="stat-item">
+            <h4 class="counter" data-target="15">0</h4>
+            <p>YILLIK ETKİNLİK</p>
+        </div>
+        <div class="stat-item">
+            <h4>%100</h4>
+            <p>GENÇ GÜCÜ</p>
         </div>
     </div>
 
-    <div class="stats-bar">
-        <div class="stat-item"><h4>50+</h4><p>AKTİF ÜYE</p></div>
-        <div class="stat-item"><h4>10+</h4><p>YILLIK ETKİNLİK</p></div>
-        <div class="stat-item"><h4>100%</h4><p>GENÇ GÜCÜ</p></div>
-    </div>
-
-    <section id="ilkeler">
-        <h2 class="section-title">Neye İnanıyoruz?</h2>
-        <div class="ilkeler-konteynir">
-            <div class="ilke-kart">
-                <h3>Cumhuriyetçilik</h3>
-                <p>Gençliğin sesinin yönetimde en güçlü şekilde duyulması gerektiğine inanıyoruz.</p>
-            </div>
-            <div class="ilke-kart">
-                <h3>Halkçılık</h3>
-                <p>Eğitimde ve sosyal hayatta tam eşitlik için mücadele ediyoruz.</p>
-            </div>
-            <div class="ilke-kart">
-                <h3>Laiklik</h3>
-                <p>Bilimin ve aklın ışığında, özgür bir gelecek düşlüyoruz.</p>
-            </div>
-            <div class="ilke-kart">
-                <h3>Milliyetçilik</h3>
-                <p>Vatanımıza ve değerlerimize sahip çıkarak evrensel bir vizyon kuruyoruz.</p>
-            </div>
-            <div class="ilke-kart">
-                <h3>Devletçilik</h3>
-                <p>Güçlü bir gelecek için güçlü bir dayanışma ağını savunuyoruz.</p>
-            </div>
-            <div class="ilke-kart">
-                <h3>Devrimcilik</h3>
-                <p>Her gün daha iyisi için değişmeye ve gelişmeye hazırız.</p>
-            </div>
+    <section class="contact-section" id="iletisim">
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Bize Ulaşın</h2>
+        <p style="color: #888; margin-bottom: 40px;">Sorularınız ve önerileriniz için bizimle iletişime geçebilirsiniz.</p>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/xaqllkyb" method="POST">
+                <div class="form-group">
+                    <label>Ad Soyad</label>
+                    <input type="text" name="Ad-Soyad" placeholder="Adınız ve Soyadınız" required>
+                </div>
+                <div class="form-group">
+                    <label>E-Posta</label>
+                    <input type="email" name="_replyto" placeholder="E-posta adresiniz" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" name="Telefon" placeholder="05XX XXX XX XX" required>
+                </div>
+                <div class="form-group">
+                    <label>Mesajınız</label>
+                    <textarea name="Mesaj" rows="4" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
+                </div>
+                <button type="submit" class="btn-gonder">GÖNDERİSİ YAP</button>
+            </form>
         </div>
     </section>
 
@@ -251,24 +179,54 @@
         <div class="footer-grid">
             <div class="footer-box">
                 <h4>Halk-Lis Seferihisar</h4>
-                <p style="color: #666; font-size: 0.9rem;">Gelecek biziz, biz geleceğiz! Seferihisar'ın aydınlık gençleri burada buluşuyor.</p>
+                <p style="color: #888; font-size: 0.9rem;">Aydınlık bir gelecek için Seferihisar gençliği omuz omuza.</p>
             </div>
             <div class="footer-box">
                 <h4>Hızlı Bağlantılar</h4>
                 <a href="#">Ana Sayfa</a>
-                <a href="#ilkeler">İlkelerimiz</a>
                 <a href="https://www.instagram.com/halklisseferihisar/">Instagram</a>
             </div>
             <div class="footer-box">
                 <h4>İletişim</h4>
                 <a href="https://www.instagram.com/33ege35/">H. Ege KASAPOĞLU</a>
-                <p style="color: #666; font-size: 0.9rem;">Seferihisar, İzmir</p>
+                <p style="color: #666; font-size: 0.8rem;">Seferihisar / İZMİR</p>
             </div>
         </div>
-        <div class="copyright">
-            © 2026 Tüm Hakları Saklıdır. Tasarlayan: **H. Ege KASAPOĞLU**
-        </div>
+        <div class="copyright">© 2026 Tasarlayan: **H. Ege KASAPOĞLU**</div>
     </footer>
 
+    <script>
+        // RASTGELE ATATÜRK SÖZÜ
+        const quotes = [
+            "Ey yükselen yeni nesil, gelecek sizindir. Cumhuriyeti biz kurduk; onu yükseltecek ve sürdürecek sizsiniz.",
+            "Gençliği yetiştiriniz. Onlara ilim ve irfanın müspet fikirlerini veriniz.",
+            "Bütün ümidim gençliktedir.",
+            "Hayatta en hakiki mürşit ilimdir.",
+            "Biz her şeyi gençliğe bırakacağız... Geleceğin ümidi, ışıklı çiçekleri onlardır."
+        ];
+        document.getElementById('ata-quote').innerText = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+
+        // SAYAÇ
+        const statsSection = document.querySelector('#stats-section');
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    counters.forEach(counter => {
+                        const updateCount = () => {
+                            const target = +counter.getAttribute('data-target');
+                            const count = +counter.innerText;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + (target / 50));
+                                setTimeout(updateCount, 20);
+                            } else { counter.innerText = target + "+"; }
+                        };
+                        updateCount();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(statsSection);
+    </script>
 </body>
 </html>
