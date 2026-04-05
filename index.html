@@ -12,69 +12,90 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: #0a0a0a; color: #fff; scroll-behavior: smooth; overflow-x: hidden; line-height: 1.6; }
 
+        /* ATATÜRK GÖZLERİ */
+        .ata-eyes-container { width: 100%; height: 180px; background-color: #000; overflow: hidden; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid #e30113; }
+        .ata-eyes-img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+
+        /* 23 NİSAN COUNTDOWN */
+        .countdown-container { background: #e30113; padding: 15px; text-align: center; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .countdown-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        #timer { font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; }
+
         /* HEADER */
-        header { background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); padding: 5px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e30113; }
+        header { background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); padding: 10px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e30113; }
         .header-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .brand-text { font-weight: 800; font-size: 0.9rem; color: #fff; flex: 1; }
+        .brand-area { display: flex; align-items: center; gap: 15px; }
+        .brand-text { font-weight: 800; font-size: 1.1rem; color: #e30113; text-transform: uppercase; letter-spacing: 1px; }
+        .sub-brand { color: #fff; font-size: 0.8rem; font-weight: 400; }
+        
         .nav-and-photo { display: flex; align-items: center; gap: 20px; }
-        nav ul { list-style: none; display: flex; gap: 15px; }
+        nav ul { list-style: none; display: flex; gap: 15px; align-items: center; }
         nav ul li a { color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: #e30113; }
-        .atam-img { height: 65px; border-radius: 4px; border: 1px solid #333; }
+        .atam-img { height: 60px; border-radius: 4px; border: 1px solid #333; }
+
+        /* MÜZİK PLAYER */
+        .music-player { position: fixed; bottom: 20px; left: 20px; z-index: 2000; background: rgba(227, 1, 19, 0.9); padding: 12px 20px; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px; border: 1px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
         /* BANNER */
-        .main-banner { width: 100%; height: 85vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('image (2).jpg'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; position: relative; }
-        .btn-katil { padding: 16px 45px; background-color: #e30113; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; border: none; box-shadow: 0 10px 30px rgba(227, 1, 19, 0.4); transition: 0.3s; }
+        .main-banner { width: 100%; height: 70vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('image (2).jpg'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; }
+        .btn-katil { padding: 16px 45px; background-color: #e30113; color: #fff; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; border: none; box-shadow: 0 10px 30px rgba(227, 1, 19, 0.4); transition: 0.3s; }
 
-        /* ATATÜRK SÖZÜ */
-        .ata-quote-section { padding: 100px 20px; background: #111; border-bottom: 1px solid #222; text-align: center; }
-        .quote-container { max-width: 900px; margin: 0 auto; }
-        .quote-text { font-size: 1.8rem; font-style: italic; min-height: 100px; line-height: 1.6; color: #efefef; margin-bottom: 35px; display: block; white-space: pre-wrap; }
-        .quote-author { color: #e30113; font-weight: 800; letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; display: block; }
+        /* BİZ KİMİZ */
+        .about-section { background: #0d0d0d; border-radius: 25px; padding: 50px 30px; max-width: 1100px; margin: 40px auto; border: 1px solid #222; text-align: center; }
+        .about-text { font-size: 1.05rem; color: #ccc; line-height: 1.8; margin-top: 20px; }
+        .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 30px; }
+        .principle-card { background: #161616; padding: 20px; border-radius: 15px; border-bottom: 4px solid #e30113; }
 
-        /* GRID YAPILARI */
-        section { padding: 80px 20px; }
-        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; color: #e30113; font-weight: 800; }
-        .days-grid, .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .day-card, .principle-card { background: #111; padding: 30px; border-radius: 20px; border-left: 5px solid #e30113; text-align: center; }
+        /* ÖNEMLİ GÜNLER VE SÖZLER */
+        .important-quotes-section { max-width: 900px; margin: 60px auto 40px; padding: 0 20px; text-align: center; }
+        .quote-box { margin-bottom: 30px; border-left: 3px solid #e30113; padding-left: 20px; }
+        .quote-icon { color: #e30113; font-size: 1.5rem; margin-bottom: 10px; }
+        .quote-text { font-style: italic; font-size: 1.1rem; color: #ddd; }
+        .quote-author { color: #e30113; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
 
-        /* FOOTER (İLETİŞİM & KONUM BURADA) */
-        footer { background: #000; padding: 70px 20px 30px; border-top: 3px solid #e30113; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .footer-box h4 { color: #e30113; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; font-size: 1rem; }
-        .footer-box a, .footer-box p { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; font-size: 0.9rem; }
-        .footer-box i { color: #e30113; margin-right: 10px; width: 20px; }
-        
-        .copyright-area { max-width: 1200px; margin: 50px auto 0; padding-top: 25px; border-top: 1px solid #222; display: flex; justify-content: space-between; align-items: center; }
-        .designer-info { color: #888; font-size: 0.85rem; }
-        .copyright-text { color: #444; font-size: 0.75rem; }
+        .days-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .day-card { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #222; border-left: 5px solid #e30113; text-align: center; transition: all 0.4s ease; }
+        .day-card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(227, 1, 19, 0.6); border-color: #e30113; }
+        .day-card h4 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
 
-        /* MOBİL UYUM */
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 10px; padding: 10px; }
-            .nav-and-photo { width: 100%; justify-content: space-between; border-top: 1px solid #222; padding-top: 10px; }
-            .atam-img { height: 50px; }
-            .main-banner { height: 50vh; background-size: contain; background-repeat: no-repeat; background-position: top center; align-items: flex-end; padding-bottom: 20px; }
-            .quote-text { font-size: 1.2rem; min-height: 120px; }
-            .copyright-area { flex-direction: column; text-align: center; gap: 15px; }
-        }
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
+        .modal-content { background: #111; padding: 30px; border-radius: 25px; width: 90%; max-width: 400px; border: 2px solid #e30113; position: relative; }
+        .contact-input { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 10px; margin-bottom: 10px; outline: none; }
 
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); justify-content: center; align-items: center; padding: 15px; }
-        .modal-content { background: #111; padding: 35px; border-radius: 25px; width: 100%; max-width: 450px; border: 2px solid #e30113; position: relative; }
-        .contact-input { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 12px; margin-bottom: 15px; font-size: 16px; outline: none; }
+        footer { background: #000; padding: 60px 20px 30px; border-top: 3px solid #e30113; margin-top: 50px; text-align: center; }
     </style>
 </head>
 <body>
 
+    <div class="music-player" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-play"></i>
+        <span style="font-weight: 800; font-size: 0.8rem;">İZMİR MARŞI</span>
+        <audio id="mars" loop><source src="izmir-marsi.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="ata-eyes-container">
+        <img src="ata-gozleri.jpg" alt="Atatürk" class="ata-eyes-img">
+    </div>
+
+    <div class="countdown-container">
+        <div class="countdown-title">23 Nisan Bayramı'na Kalan Süre</div>
+        <div id="timer">Yükleniyor...</div>
+    </div>
+
     <header>
         <div class="header-container">
-            <div class="brand-text">Gelecek Biziz, Biz Geleceğiz!</div>
+            <div class="brand-area">
+                <div class="brand-text">HALK-LİS</div>
+                <div class="sub-brand">SEFERİHİSAR</div>
+            </div>
             <div class="nav-and-photo">
                 <nav>
                     <ul>
                         <li><a href="#">ANA SAYFA</a></li>
-                        <li><a href="https://www.instagram.com/halklisseferihisar/" target="_blank">İNSTAGRAM</a></li>
-                        <li><a href="#iletisim">BİZE ULAŞIN</a></li>
+                        <li><a href="#bizkimiz">BİZ KİMİZ?</a></li>
+                        <li><a href="https://www.instagram.com/halklisseferihisar/" target="_blank" style="color: #e30113;"><i class="fab fa-instagram"></i> INSTAGRAM</a></li>
                     </ul>
                 </nav>
                 <img src="atam!.jpg" alt="Atatürk" class="atam-img">
@@ -86,89 +107,89 @@
         <button class="btn-katil" onclick="openModal()">BİZE KATIL</button>
     </div>
 
-    <div id="joinModal" class="modal">
-        <div class="modal-content">
-            <span style="position:absolute; right:25px; top:15px; font-size:2.5rem; cursor:pointer; color:#888;" onclick="closeModal()">&times;</span>
-            <h3 style="color:#e30113; text-align:center; margin-bottom:25px; font-weight:800;">Halk-Lis'e Katıl</h3>
-            <form action="https://formspree.io/f/xaqllkyb" method="POST">
-                <input type="text" name="Ad Soyad" class="contact-input" placeholder="Ad Soyad" required>
-                <input type="tel" name="Telefon" class="contact-input" placeholder="İletişim Numarası" required>
-                <input type="text" name="Okul" class="contact-input" placeholder="Okulunuz" required>
-                <input type="number" name="Yaş" class="contact-input" placeholder="Yaşınız" required>
-                <button type="submit" style="width:100%; padding:16px; background:#e30113; color:#fff; border:none; font-weight:800; border-radius:12px; cursor:pointer;">BAŞVURUYU TAMAMLA</button>
-            </form>
+    <section id="bizkimiz">
+        <div class="about-section">
+            <h2 style="color: #e30113; margin-bottom: 20px;">Biz Kimiz?</h2>
+            <p class="about-text">
+                Halkçı Liseliler, başta lise öğrencileri ve gençler olmak üzere toplumun ve bireylerin sorunlarını çözümler ışığında gündeme getiren, daha güzel bir Türkiye için çabalayan, kendi arasında sosyokültürel etkinlikler düzenleyerek yeni arkadaşlık bağları oluşturmayı hedefleyen <strong>Atatürkçü, yenilikçi, sosyal demokrat, özgürlükçü ve aydın</strong> gençlerin bulunmakta olduğu ve görevler aldığı sosyo-siyasi bir kuruluştur.
+            </p>
+            <div class="principles-grid">
+                <div class="principle-card"><h4>Cumhuriyetçilik</h4></div>
+                <div class="principle-card"><h4>Milliyetçilik</h4></div>
+                <div class="principle-card"><h4>Halkçılık</h4></div>
+                <div class="principle-card"><h4>Devletçilik</h4></div>
+                <div class="principle-card"><h4>Laiklik</h4></div>
+                <div class="principle-card"><h4>Devrimcilik</h4></div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <section class="ata-quote-section" id="quote-section">
-        <div class="quote-container">
-            <span class="quote-text" id="typewriter-text"></span>
-            <span class="quote-author">MUSTAFA KEMAL ATATÜRK</span>
+    <section class="important-quotes-section">
+        <div class="quote-box">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-text">Gençler! Benim gelecekteki emellerimi tahakkuk ettirecek gençler! Bir gün bu memleketi sizin gibi zeki ve enerjik bir gençliğe bırakacağımdan dolayı çok memnunum.</p>
+            <p class="quote-author">Mustafa Kemal Atatürk</p>
+        </div>
+        <div class="quote-box">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-text">Biz her şeyi gençliğe bırakacağız... O gençlik ki hiçbir şeyi unutmayacaktır; geleceğin ümidi, ışığı odur.</p>
+            <p class="quote-author">Mustafa Kemal Atatürk</p>
         </div>
     </section>
 
     <section id="gunler">
-        <h2>2026 Önemli Günler</h2>
+        <h2 style="text-align: center; color: #e30113; margin-bottom: 40px; font-weight: 800;">2026 ÖNEMLİ GÜNLER</h2>
         <div class="days-grid">
             <div class="day-card"><h4>23 Nisan</h4><p>Ulusal Egemenlik ve Çocuk Bayramı</p></div>
+            <div class="day-card"><h4>8 Mayıs</h4><p>Aydınlığın Faşizme Zaferi</p></div>
             <div class="day-card"><h4>19 Mayıs</h4><p>Gençlik ve Spor Bayramı</p></div>
             <div class="day-card"><h4>29 Ekim</h4><p>Cumhuriyet Bayramı</p></div>
-            <div class="day-card"><h4>10 Kasım</h4><p>Atatürk Günü</p></div>
+            <div class="day-card"><h4>10 Kasım</h4><p>Atatürk'ü Anma Günü</p></div>
         </div>
     </section>
 
-    <section id="iletisim" style="background: #0d0d0d;">
-        <h2>Bize Ulaşın</h2>
-        <div style="max-width:650px; margin:0 auto; background:#111; padding:40px; border-radius:25px; border: 1px solid #222;">
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <span style="position:absolute; right:20px; top:10px; font-size:2.5rem; cursor:pointer;" onclick="closeModal()">&times;</span>
+            <h3 style="color:#e30113; text-align:center; margin-bottom:20px; font-weight:800;">BİZE KATIL</h3>
             <form action="https://formspree.io/f/xaqllkyb" method="POST">
-                <input type="text" name="İsim" class="contact-input" placeholder="Ad Soyad" required>
-                <input type="email" name="Email" class="contact-input" placeholder="E-Posta" required>
-                <textarea name="Mesaj" class="contact-input" rows="5" placeholder="Mesajınız..." required></textarea>
-                <button type="submit" style="width:100%; padding:16px; background:#e30113; color:#fff; border:none; font-weight:800; border-radius:12px; cursor:pointer;">MESAJI GÖNDER</button>
+                <input type="text" name="Ad" class="contact-input" placeholder="Ad Soyad" required>
+                <input type="tel" name="Tel" class="contact-input" placeholder="Telefon" required>
+                <input type="text" name="Okul" class="contact-input" placeholder="Okul" required>
+                <button type="submit" style="width:100%; padding:14px; background:#e30113; color:#fff; border:none; font-weight:800; border-radius:10px; cursor:pointer;">BAŞVUR</button>
             </form>
         </div>
-    </section>
+    </div>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h4>Halk-Lis Seferihisar</h4>
-                <p>Aydınlık bir gelecek için Seferihisar gençliği omuz omuza çalışmaya devam ediyor.</p>
-            </div>
-            <div class="footer-box">
-                <h4>Hızlı Bağlantılar</h4>
-                <a href="#">Ana Sayfa</a>
-                <a href="#gunler">Önemli Günler</a>
-                <a href="#iletisim">Bize Ulaşın</a>
-                <a href="https://www.instagram.com/halklisseferihisar/" target="_blank">Instagram</a>
-            </div>
-            <div class="footer-box">
-                <h4>İletişim & Konum</h4>
-                <p><i class="fas fa-user-circle"></i> H. Ege KASAPOĞLU</p>
-                <p><i class="fas fa-map-marker-alt"></i> Seferihisar / İZMİR</p>
-                <p><i class="fas fa-envelope"></i> halklisseferihisar@gmail.com</p>
-                <a href="https://www.instagram.com/33ege35/" target="_blank"><i class="fab fa-instagram"></i> Tasarımcı Instagram</a>
-            </div>
-        </div>
-        <div class="copyright-area">
-            <div class="designer-info">Tasarlayan: <b style="color:#e30113;">H. Ege KASAPOĞLU</b></div>
-            <div class="copyright-text">© 2026 Halkçı Liseler Seferihisar. Tüm Hakları Saklıdır.</div>
-        </div>
+        <p style="color: #e30113; font-weight: 800; margin-bottom: 10px;">Halk-Lis Seferihisar</p>
+        <p><a href="https://www.instagram.com/33ege35/" target="_blank" style="color: #ccc; text-decoration: none;"><i class="fab fa-instagram"></i> H. Ege KASAPOĞLU</a></p>
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #444;">© 2026 Tasarlayan: <b style="color: #e30113;">H. Ege KASAPOĞLU</b></div>
     </footer>
 
     <script>
         function openModal() { document.getElementById('joinModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('joinModal').style.display = 'none'; }
-        window.onclick = function(event) { if (event.target == document.getElementById('joinModal')) closeModal(); }
+        window.onclick = function(e) { if (e.target == document.getElementById('joinModal')) closeModal(); }
 
-        const quotes = ["Bütün ümidim gençliktedir.", "Türk genci, devrimlerin bekçisidir.", "Ey Türk gençliği! Birinci vazifen cumhuriyeti korumaktır."];
-        const quoteText = quotes[Math.floor(Math.random() * quotes.length)];
-        const textElement = document.getElementById('typewriter-text');
-        let index = 0;
-        function type() { if (index < quoteText.length) { textElement.textContent += quoteText.charAt(index); index++; setTimeout(type, 50); } }
-        window.onload = type;
+        const targetDate = new Date('April 23, 2026 00:00:00').getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById('timer').innerHTML = `${d} GÜN ${h} SAAT ${m} DK ${s} SN`;
+        }, 1000);
 
-        ScrollReveal().reveal('.day-card, .ata-quote-section, #iletisim', { delay: 200, distance: '40px', duration: 1000, origin: 'bottom' });
+        const mars = document.getElementById('mars');
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            if (mars.paused) { mars.play(); icon.classList.replace('fa-play', 'fa-pause'); }
+            else { mars.pause(); icon.classList.replace('fa-pause', 'fa-play'); }
+        }
+        ScrollReveal().reveal('.principle-card, .day-card, .quote-box', { delay: 200, interval: 100, origin: 'bottom', distance: '30px' });
     </script>
 </body>
 </html>
