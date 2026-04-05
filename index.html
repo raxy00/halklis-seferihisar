@@ -47,24 +47,31 @@
         .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 30px; }
         .principle-card { background: #161616; padding: 20px; border-radius: 15px; border-bottom: 4px solid #e30113; }
 
-        /* ÖNEMLİ GÜNLER VE SÖZLER */
-        .important-quotes-section { max-width: 900px; margin: 60px auto 40px; padding: 0 20px; text-align: center; }
-        .quote-box { margin-bottom: 30px; border-left: 3px solid #e30113; padding-left: 20px; }
-        .quote-icon { color: #e30113; font-size: 1.5rem; margin-bottom: 10px; }
-        .quote-text { font-style: italic; font-size: 1.1rem; color: #ddd; }
-        .quote-author { color: #e30113; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
+        /* RASTGELE ATATÜRK SÖZÜ PENCERESİ */
+        .quote-window { max-width: 800px; margin: 60px auto; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; position: relative; text-align: center; border-right: 5px solid #e30113; }
+        #random-quote { font-style: italic; font-size: 1.2rem; color: #fff; margin-bottom: 15px; min-height: 60px; }
+        .quote-author-win { color: #e30113; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
 
-        .days-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* ÖNEMLİ GÜNLER */
+        .days-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .day-card { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #222; border-left: 5px solid #e30113; text-align: center; transition: all 0.4s ease; }
-        .day-card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(227, 1, 19, 0.6); border-color: #e30113; }
-        .day-card h4 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+        .day-card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(227, 1, 19, 0.6); }
+
+        /* FOOTER DETAYLAR */
+        footer { background: #000; padding: 60px 20px 20px; border-top: 3px solid #e30113; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; text-align: left; }
+        .footer-box h3 { color: #e30113; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a:hover { color: #fff; padding-left: 5px; }
+        .contact-info { color: #ccc; font-size: 0.9rem; line-height: 2; }
+        .map-container { width: 100%; height: 150px; border-radius: 10px; overflow: hidden; margin-top: 15px; border: 1px solid #333; }
 
         /* MODAL */
         .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
         .modal-content { background: #111; padding: 30px; border-radius: 25px; width: 90%; max-width: 400px; border: 2px solid #e30113; position: relative; }
         .contact-input { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 10px; margin-bottom: 10px; outline: none; }
-
-        footer { background: #000; padding: 60px 20px 30px; border-top: 3px solid #e30113; margin-top: 50px; text-align: center; }
     </style>
 </head>
 <body>
@@ -107,50 +114,76 @@
         <button class="btn-katil" onclick="openModal()">BİZE KATIL</button>
     </div>
 
-    <section id="bizkimiz">
+    <section id="bizkimiz" class="reveal">
         <div class="about-section">
             <h2 style="color: #e30113; margin-bottom: 20px;">Biz Kimiz?</h2>
             <p class="about-text">
                 Halkçı Liseliler, başta lise öğrencileri ve gençler olmak üzere toplumun ve bireylerin sorunlarını çözümler ışığında gündeme getiren, daha güzel bir Türkiye için çabalayan, kendi arasında sosyokültürel etkinlikler düzenleyerek yeni arkadaşlık bağları oluşturmayı hedefleyen <strong>Atatürkçü, yenilikçi, sosyal demokrat, özgürlükçü ve aydın</strong> gençlerin bulunmakta olduğu ve görevler aldığı sosyo-siyasi bir kuruluştur.
             </p>
             <div class="principles-grid">
-                <div class="principle-card"><h4>Cumhuriyetçilik</h4></div>
-                <div class="principle-card"><h4>Milliyetçilik</h4></div>
-                <div class="principle-card"><h4>Halkçılık</h4></div>
-                <div class="principle-card"><h4>Devletçilik</h4></div>
-                <div class="principle-card"><h4>Laiklik</h4></div>
-                <div class="principle-card"><h4>Devrimcilik</h4></div>
+                <div class="principle-card reveal"><h4>Cumhuriyetçilik</h4></div>
+                <div class="principle-card reveal"><h4>Milliyetçilik</h4></div>
+                <div class="principle-card reveal"><h4>Halkçılık</h4></div>
+                <div class="principle-card reveal"><h4>Devletçilik</h4></div>
+                <div class="principle-card reveal"><h4>Laiklik</h4></div>
+                <div class="principle-card reveal"><h4>Devrimcilik</h4></div>
             </div>
         </div>
     </section>
 
-    <section class="important-quotes-section">
-        <div class="quote-box">
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p class="quote-text">Gençler! Benim gelecekteki emellerimi tahakkuk ettirecek gençler! Bir gün bu memleketi sizin gibi zeki ve enerjik bir gençliğe bırakacağımdan dolayı çok memnunum.</p>
-            <p class="quote-author">Mustafa Kemal Atatürk</p>
-        </div>
-        <div class="quote-box">
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p class="quote-text">Biz her şeyi gençliğe bırakacağız... O gençlik ki hiçbir şeyi unutmayacaktır; geleceğin ümidi, ışığı odur.</p>
-            <p class="quote-author">Mustafa Kemal Atatürk</p>
-        </div>
+    <section class="quote-window reveal">
+        <i class="fas fa-quote-left" style="color:#e30113; font-size: 2rem; position:absolute; top:-15px; left:20px;"></i>
+        <p id="random-quote">Yükleniyor...</p>
+        <p class="quote-author-win">— Mustafa Kemal Atatürk</p>
     </section>
 
     <section id="gunler">
         <h2 style="text-align: center; color: #e30113; margin-bottom: 40px; font-weight: 800;">2026 ÖNEMLİ GÜNLER</h2>
         <div class="days-grid">
-            <div class="day-card"><h4>23 Nisan</h4><p>Ulusal Egemenlik ve Çocuk Bayramı</p></div>
-            <div class="day-card"><h4>8 Mayıs</h4><p>Aydınlığın Faşizme Zaferi</p></div>
-            <div class="day-card"><h4>19 Mayıs</h4><p>Gençlik ve Spor Bayramı</p></div>
-            <div class="day-card"><h4>29 Ekim</h4><p>Cumhuriyet Bayramı</p></div>
-            <div class="day-card"><h4>10 Kasım</h4><p>Atatürk'ü Anma Günü</p></div>
+            <div class="day-card reveal"><h4>23 Nisan</h4><p>Ulusal Egemenlik ve Çocuk Bayramı</p></div>
+            <div class="day-card reveal"><h4>19 Mayıs</h4><p>Gençlik ve Spor Bayramı</p></div>
+            <div class="day-card reveal"><h4>30 Ağustos</h4><p>Zafer Bayramı</p></div>
+            <div class="day-card reveal"><h4>29 Ekim</h4><p>Cumhuriyet Bayramı</p></div>
+            <div class="day-card reveal"><h4>10 Kasım</h4><p>Atatürk'ü Anma Günü</p></div>
         </div>
     </section>
 
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-box reveal">
+                <h3>HIZLI BAĞLANTILAR</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
+                    <li><a href="#bizkimiz"><i class="fas fa-chevron-right"></i> Biz Kimiz?</a></li>
+                    <li><a href="https://www.instagram.com/halklisseferihisar/"><i class="fas fa-chevron-right"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-box reveal">
+                <h3>İLETİŞİM</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope" style="color:#e30113;"></i> info@halklisseferihisar.org</p>
+                    <p><i class="fab fa-instagram" style="color:#e30113;"></i> @halklisseferihisar</p>
+                    <p><i class="fas fa-map-marker-alt" style="color:#e30113;"></i> Seferihisar, İzmir</p>
+                </div>
+            </div>
+            <div class="footer-box reveal">
+                <h3>KONUMUMUZ</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25065.123456789!2d26.8385!3d38.1969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb954000000000%3A0x0!2zU2VmZXJpaGlzYXI!5e0!3m2!1str!2str!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 50px; text-align: center; border-top: 1px solid #222; padding-top: 20px;">
+            <p style="color: #e30113; font-weight: 800;">Halk-Lis Seferihisar</p>
+            <div style="font-size: 0.8rem; color: #444; margin-top: 10px;">
+                © 2026 Tasarlayan: <a href="https://www.instagram.com/33ege35/" target="_blank" style="color: #e30113; text-decoration: none; font-weight: 800;">H. Ege KASAPOĞLU</a>
+            </div>
+        </div>
+    </footer>
+
     <div id="joinModal" class="modal">
         <div class="modal-content">
-            <span style="position:absolute; right:20px; top:10px; font-size:2.5rem; cursor:pointer;" onclick="closeModal()">&times;</span>
+            <span style="position:absolute; right:20px; top:10px; font-size:2.5rem; cursor:pointer;" onclick="closeModal()">×</span>
             <h3 style="color:#e30113; text-align:center; margin-bottom:20px; font-weight:800;">BİZE KATIL</h3>
             <form action="https://formspree.io/f/xaqllkyb" method="POST">
                 <input type="text" name="Ad" class="contact-input" placeholder="Ad Soyad" required>
@@ -161,17 +194,30 @@
         </div>
     </div>
 
-    <footer>
-        <p style="color: #e30113; font-weight: 800; margin-bottom: 10px;">Halk-Lis Seferihisar</p>
-        <p><a href="https://www.instagram.com/33ege35/" target="_blank" style="color: #ccc; text-decoration: none;"><i class="fab fa-instagram"></i> H. Ege KASAPOĞLU</a></p>
-        <div style="margin-top: 20px; font-size: 0.8rem; color: #444;">© 2026 Tasarlayan: <b style="color: #e30113;">H. Ege KASAPOĞLU</b></div>
-    </footer>
-
     <script>
+        // RASTGELE SÖZ SİSTEMİ
+        const quotes = [
+            "Gençler! Benim gelecekteki emellerimi tahakkuk ettirecek gençler! Bir gün bu memleketi sizin gibi zeki bir gençliğe bırakacağımdan dolayı çok memnunum.",
+            "Yükselen yeni nesil, istikbal sizsiniz. Cumhuriyeti biz kurduk, onu yükseltecek ve yaşatacak sizsiniz.",
+            "Biz her şeyi gençliğe bırakacağız... O gençlik ki hiçbir şeyi unutmayacaktır; geleceğin ümidi, ışığı odur.",
+            "Bütün ümidim gençliktedir.",
+            "Ey Türk Gençliği! Birinci vazifen; Türk istiklalini, Türk Cumhuriyetini, ilelebet muhafaza ve müdafaa etmektir.",
+            "Muhtaç olduğun kudret, damarlarındaki asil kanda mevcuttur!",
+            "Eğitimdir ki bir milleti ya hür, bağımsız, şanlı, yüksek bir topluluk halinde yaşatır; ya da esaret ve sefalete terk eder."
+        ];
+        document.getElementById('random-quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+
+        // MODAL VE MÜZİK
         function openModal() { document.getElementById('joinModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('joinModal').style.display = 'none'; }
-        window.onclick = function(e) { if (e.target == document.getElementById('joinModal')) closeModal(); }
+        const mars = document.getElementById('mars');
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            if (mars.paused) { mars.play(); icon.classList.replace('fa-play', 'fa-pause'); }
+            else { mars.pause(); icon.classList.replace('fa-pause', 'fa-play'); }
+        }
 
+        // GERİ SAYIM
         const targetDate = new Date('April 23, 2026 00:00:00').getTime();
         setInterval(() => {
             const now = new Date().getTime();
@@ -183,13 +229,16 @@
             document.getElementById('timer').innerHTML = `${d} GÜN ${h} SAAT ${m} DK ${s} SN`;
         }, 1000);
 
-        const mars = document.getElementById('mars');
-        function toggleMusic() {
-            const icon = document.getElementById('music-icon');
-            if (mars.paused) { mars.play(); icon.classList.replace('fa-play', 'fa-pause'); }
-            else { mars.pause(); icon.classList.replace('fa-pause', 'fa-play'); }
-        }
-        ScrollReveal().reveal('.principle-card, .day-card, .quote-box', { delay: 200, interval: 100, origin: 'bottom', distance: '30px' });
+        // KAYDIRINCA GELEN ANİMASYONLAR
+        ScrollReveal().reveal('.reveal', { 
+            delay: 200, 
+            distance: '50px', 
+            origin: 'bottom', 
+            duration: 1000,
+            interval: 100,
+            opacity: 0,
+            scale: 0.9
+        });
     </script>
 </body>
 </html>
