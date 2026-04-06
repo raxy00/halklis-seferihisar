@@ -10,75 +10,86 @@
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #0a0a0a; color: #fff; scroll-behavior: smooth; overflow-x: hidden; line-height: 1.6; }
+        html, body { width: 100%; overflow-x: hidden; background-color: #0a0a0a; color: #fff; scroll-behavior: smooth; line-height: 1.6; }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* ATATÜRK GÖZLERİ */
-        .ata-eyes-container { width: 100%; height: 180px; background-color: #000; overflow: hidden; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid #e30113; }
-        .ata-eyes-img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+        .ata-eyes-container { width: 100%; height: 180px; background-color: #000; overflow: hidden; display: flex; justify-content: center; border-bottom: 2px solid #e30113; }
+        .ata-eyes-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 23 NİSAN COUNTDOWN */
-        .countdown-container { background: #e30113; padding: 15px; text-align: center; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .countdown-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        #timer { font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; }
+        /* COUNTDOWN */
+        .countdown-container { width: 100%; background: #e30113; padding: 15px 0; text-align: center; color: white; }
+        #timer { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; }
 
         /* HEADER */
-        header { background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); padding: 10px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e30113; }
-        .header-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .brand-area { display: flex; align-items: center; gap: 15px; }
-        .brand-text { font-weight: 800; font-size: 1.1rem; color: #e30113; text-transform: uppercase; letter-spacing: 1px; }
-        .sub-brand { color: #fff; font-size: 0.8rem; font-weight: 400; }
+        header { width: 100%; background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e30113; padding: 10px 0; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .brand-text { font-weight: 800; font-size: 1.1rem; color: #e30113; }
         
-        .nav-and-photo { display: flex; align-items: center; gap: 20px; }
-        nav ul { list-style: none; display: flex; gap: 15px; align-items: center; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
-        nav ul li a:hover { color: #e30113; }
-        .atam-img { height: 60px; border-radius: 4px; border: 1px solid #333; }
+        .header-nav { display: flex; align-items: center; gap: 20px; }
+        .header-nav a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: 0.3s; }
+        .header-nav a:hover { color: #e30113; }
+        .atam-img { height: 55px; border-radius: 5px; border: 1px solid #333; }
 
-        /* MÜZİK PLAYER */
-        .music-player { position: fixed; bottom: 20px; left: 20px; z-index: 2000; background: rgba(227, 1, 19, 0.9); padding: 12px 20px; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px; border: 1px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        /* MÜZİK */
+        .music-player { position: fixed; bottom: 20px; left: 20px; z-index: 2000; background: rgba(227, 1, 19, 0.9); padding: 10px 20px; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px; border: 1px solid #fff; }
 
         /* BANNER */
-        .main-banner { width: 100%; height: 70vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('image (2).jpg'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; }
-        .btn-katil { padding: 16px 45px; background-color: #e30113; color: #fff; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; border: none; box-shadow: 0 10px 30px rgba(227, 1, 19, 0.4); transition: 0.3s; }
+        .main-banner { width: 100%; height: 60vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('image (2).jpg'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; }
+        .btn-katil { padding: 16px 45px; background-color: #e30113; color: #fff; border-radius: 50px; font-weight: 800; border: none; cursor: pointer; transition: 0.3s; }
 
-        /* BİZ KİMİZ */
-        .about-section { background: #0d0d0d; border-radius: 25px; padding: 50px 30px; max-width: 1100px; margin: 40px auto; border: 1px solid #222; text-align: center; }
-        .about-text { font-size: 1.05rem; color: #ccc; line-height: 1.8; margin-top: 20px; }
-        .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 30px; }
-        .principle-card { background: #161616; padding: 20px; border-radius: 15px; border-bottom: 4px solid #e30113; }
+        /* BİZ KİMİZ & İLKELER */
+        .about-section { background: #0d0d0d; border-radius: 25px; padding: 50px 20px; border: 1px solid #222; text-align: center; margin-top: 40px; }
+        .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+        .principle-card { background: #161616; padding: 25px; border-radius: 20px; border-bottom: 4px solid #e30113; text-align: left; }
+        .principle-card h3 { color: #e30113; margin-bottom: 10px; font-size: 1.2rem; }
+        .principle-card p { font-size: 0.85rem; color: #aaa; }
 
-        /* RASTGELE ATATÜRK SÖZÜ PENCERESİ */
-        .quote-window { max-width: 800px; margin: 60px auto; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; position: relative; text-align: center; border-right: 5px solid #e30113; }
-        #random-quote { font-style: italic; font-size: 1.2rem; color: #fff; margin-bottom: 15px; min-height: 60px; }
-        .quote-author-win { color: #e30113; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+        /* SAYAÇ */
+        .stat-number { font-size: 3rem; font-weight: 800; color: #e30113; margin-top: 20px; }
 
-        /* ÖNEMLİ GÜNLER */
-        .days-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .day-card { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #222; border-left: 5px solid #e30113; text-align: center; transition: all 0.4s ease; }
-        .day-card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(227, 1, 19, 0.6); }
+        /* SSS */
+        .faq-container { width: 100%; max-width: 800px; margin: 60px auto; }
+        .faq-item { background: #111; margin-bottom: 10px; border-radius: 12px; border: 1px solid #222; overflow: hidden; }
+        .faq-question { padding: 18px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; align-items: center; }
+        .faq-answer { padding: 0 18px; max-height: 0; overflow: hidden; transition: all 0.4s ease; color: #999; font-size: 0.9rem; line-height: 1.5; }
+        .faq-item.active .faq-answer { padding: 10px 18px 20px 18px; max-height: 500px; }
 
-        /* FOOTER DETAYLAR */
-        footer { background: #000; padding: 60px 20px 20px; border-top: 3px solid #e30113; margin-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; text-align: left; }
+        /* ATATÜRK SÖZÜ KUTUSU */
+        .quote-box { background: #111; padding: 40px; border-radius: 20px; border-right: 5px solid #e30113; text-align: center; margin: 50px 0; border: 1px solid #222; border-right: 6px solid #e30113; }
+        #random-quote { font-style: italic; font-size: 1.1rem; color: #fff; margin-bottom: 10px; min-height: 50px; }
+        .quote-author { color: #e30113; font-weight: 800; font-size: 0.85rem; }
+
+        /* GÜNLER */
+        .days-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 30px 0; }
+        .day-card { background: #111; padding: 20px; border-radius: 15px; border-left: 5px solid #e30113; text-align: center; }
+
+        /* FOOTER */
+        footer { background: #000; padding: 60px 0 20px; border-top: 3px solid #e30113; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .footer-box h3 { color: #e30113; margin-bottom: 20px; font-size: 1.1rem; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .footer-links a:hover { color: #fff; padding-left: 5px; }
-        .contact-info { color: #ccc; font-size: 0.9rem; line-height: 2; }
-        .map-container { width: 100%; height: 150px; border-radius: 10px; overflow: hidden; margin-top: 15px; border: 1px solid #333; }
+        .contact-link { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .map-frame { width: 100%; height: 180px; border-radius: 10px; border: 1px solid #333; }
 
         /* MODAL */
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
-        .modal-content { background: #111; padding: 30px; border-radius: 25px; width: 90%; max-width: 400px; border: 2px solid #e30113; position: relative; }
-        .contact-input { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 10px; margin-bottom: 10px; outline: none; }
+        .modal { display: none; position: fixed; z-index: 3000; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; padding: 20px; top:0; left:0; }
+        .modal-content { background: #111; padding: 30px; border-radius: 20px; width: 100%; max-width: 400px; border: 2px solid #e30113; position: relative; }
+        .contact-input { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 8px; margin-bottom: 15px; }
+
+        @media (max-width: 768px) {
+            .header-nav { gap: 10px; }
+            .header-nav a { font-size: 0.65rem; }
+            .ata-eyes-container { height: 100px; }
+            .stat-number { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
     <div class="music-player" onclick="toggleMusic()">
         <i id="music-icon" class="fas fa-play"></i>
-        <span style="font-weight: 800; font-size: 0.8rem;">İZMİR MARŞI</span>
+        <span style="font-size: 0.7rem; font-weight: 800;">İZMİR MARŞI</span>
         <audio id="mars" loop><source src="izmir-marsi.mp3" type="audio/mpeg"></audio>
     </div>
 
@@ -87,24 +98,16 @@
     </div>
 
     <div class="countdown-container">
-        <div class="countdown-title">23 Nisan Bayramı'na Kalan Süre</div>
+        <div style="font-size: 0.7rem; letter-spacing: 2px;">23 NİSAN'A KALAN SÜRE</div>
         <div id="timer">Yükleniyor...</div>
     </div>
 
     <header>
-        <div class="header-container">
-            <div class="brand-area">
-                <div class="brand-text">HALK-LİS</div>
-                <div class="sub-brand">SEFERİHİSAR</div>
-            </div>
-            <div class="nav-and-photo">
-                <nav>
-                    <ul>
-                        <li><a href="#">ANA SAYFA</a></li>
-                        <li><a href="#bizkimiz">BİZ KİMİZ?</a></li>
-                        <li><a href="https://www.instagram.com/halklisseferihisar/" target="_blank" style="color: #e30113;"><i class="fab fa-instagram"></i> INSTAGRAM</a></li>
-                    </ul>
-                </nav>
+        <div class="container header-flex">
+            <div class="brand-text">HALK-LİS SEFERİHİSAR</div>
+            <div class="header-nav">
+                <a href="#">ANA SAYFA</a>
+                <a href="https://www.instagram.com/halklisseferihisar/" target="_blank"><i class="fab fa-instagram"></i> INSTAGRAM</a>
                 <img src="atam!.jpg" alt="Atatürk" class="atam-img">
             </div>
         </div>
@@ -114,131 +117,135 @@
         <button class="btn-katil" onclick="openModal()">BİZE KATIL</button>
     </div>
 
-    <section id="bizkimiz" class="reveal">
-        <div class="about-section">
-            <h2 style="color: #e30113; margin-bottom: 20px;">Biz Kimiz?</h2>
-            <p class="about-text">
-                Halkçı Liseliler, başta lise öğrencileri ve gençler olmak üzere toplumun ve bireylerin sorunlarını çözümler ışığında gündeme getiren, daha güzel bir Türkiye için çabalayan, kendi arasında sosyokültürel etkinlikler düzenleyerek yeni arkadaşlık bağları oluşturmayı hedefleyen <strong>Atatürkçü, yenilikçi, sosyal demokrat, özgürlükçü ve aydın</strong> gençlerin bulunmakta olduğu ve görevler aldığı sosyo-siyasi bir kuruluştur.
-            </p>
+    <div class="container">
+        
+        <section class="about-section reveal">
+            <h2 style="color: #e30113; margin-bottom: 15px;">BİZ KİMİZ?</h2>
+            <p style="color: #bbb; font-size: 0.95rem;">Atatürkçü, yenilikçi ve sosyal demokrat gençlerin buluşma noktasıyız.</p>
+            
+            <div class="stat-number" data-target="350">0</div>
+            <p style="font-size: 0.8rem; color: #666; letter-spacing: 2px;">SEFERİHİSARLI GENÇ BİZİMLE</p>
+
             <div class="principles-grid">
-                <div class="principle-card reveal"><h4>Cumhuriyetçilik</h4></div>
-                <div class="principle-card reveal"><h4>Milliyetçilik</h4></div>
-                <div class="principle-card reveal"><h4>Halkçılık</h4></div>
-                <div class="principle-card reveal"><h4>Devletçilik</h4></div>
-                <div class="principle-card reveal"><h4>Laiklik</h4></div>
-                <div class="principle-card reveal"><h4>Devrimcilik</h4></div>
+                <div class="principle-card"><h3>Cumhuriyetçilik</h3><p>Halkın kendi kendini yönetme gücünü savunuyoruz.</p></div>
+                <div class="principle-card"><h3>Milliyetçilik</h3><p>Milli birlik ve beraberlik ruhuyla hareket ediyoruz.</p></div>
+                <div class="principle-card"><h3>Halkçılık</h3><p>Toplumda sınıfsız ve imtiyazsız eşitliği temel alıyoruz.</p></div>
+                <div class="principle-card"><h3>Devletçilik</h3><p>Güçlü bir halk ve devlet el birliğini destekliyoruz.</p></div>
+                <div class="principle-card"><h3>Laiklik</h3><p>İnanç özgürlüğü ve akılcı yönetimi savunuyoruz.</p></div>
+                <div class="principle-card"><h3>Devrimcilik</h3><p>Çağdaş uygarlık seviyesi için sürekli yenileniyoruz.</p></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="quote-window reveal">
-        <i class="fas fa-quote-left" style="color:#e30113; font-size: 2rem; position:absolute; top:-15px; left:20px;"></i>
-        <p id="random-quote">Yükleniyor...</p>
-        <p class="quote-author-win">— Mustafa Kemal Atatürk</p>
-    </section>
+        <section class="faq-container reveal">
+            <h2 style="text-align: center; color: #e30113; margin-bottom: 25px;">SIKÇA SORULAN SORULAR</h2>
+            <div class="faq-item">
+                <div class="faq-question">Halk-Lis tam olarak nedir? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Seferihisar'ın aydınlık geleceğini kurmayı amaçlayan dinamik bir gençlik organizasyonudur.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Ücret veya aidat var mı? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Hayır, üyelik tamamen ücretsizdir. Aidat veya giriş ücreti bulunmaz.</div>
+            </div>
+        </section>
 
-    <section id="gunler">
-        <h2 style="text-align: center; color: #e30113; margin-bottom: 40px; font-weight: 800;">2026 ÖNEMLİ GÜNLER</h2>
-        <div class="days-grid">
-            <div class="day-card reveal"><h4>23 Nisan</h4><p>Ulusal Egemenlik ve Çocuk Bayramı</p></div>
-            <div class="day-card reveal"><h4>19 Mayıs</h4><p>Gençlik ve Spor Bayramı</p></div>
-            <div class="day-card reveal"><h4>30 Ağustos</h4><p>Zafer Bayramı</p></div>
-            <div class="day-card reveal"><h4>29 Ekim</h4><p>Cumhuriyet Bayramı</p></div>
-            <div class="day-card reveal"><h4>10 Kasım</h4><p>Atatürk'ü Anma Günü</p></div>
-        </div>
-    </section>
+        <section class="quote-box reveal">
+            <i class="fas fa-quote-left" style="color: #e30113; font-size: 2rem; margin-bottom: 15px;"></i>
+            <p id="random-quote">Yükleniyor...</p>
+            <p class="quote-author">— MUSTAFA KEMAL ATATÜRK</p>
+        </section>
+
+        <section id="gunler" class="reveal">
+            <h2 style="text-align: center; color: #e30113; margin-bottom: 25px;">2026 ÖNEMLİ GÜNLER</h2>
+            <div class="days-grid">
+                <div class="day-card"><strong>23 Nisan</strong></div>
+                <div class="day-card"><strong>19 Mayıs</strong></div>
+                <div class="day-card"><strong>30 Ağustos</strong></div>
+                <div class="day-card"><strong>29 Ekim</strong></div>
+                <div class="day-card"><strong>10 Kasım</strong></div>
+            </div>
+        </section>
+
+    </div>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-box reveal">
-                <h3>HIZLI BAĞLANTILAR</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
-                    <li><a href="#bizkimiz"><i class="fas fa-chevron-right"></i> Biz Kimiz?</a></li>
-                    <li><a href="https://www.instagram.com/halklisseferihisar/"><i class="fas fa-chevron-right"></i> Instagram</a></li>
-                </ul>
-            </div>
+        <div class="container footer-grid">
             <div class="footer-box reveal">
                 <h3>İLETİŞİM</h3>
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope" style="color:#e30113;"></i> info@halklisseferihisar.org</p>
-                    <p><i class="fab fa-instagram" style="color:#e30113;"></i> @halklisseferihisar</p>
-                    <p><i class="fas fa-map-marker-alt" style="color:#e30113;"></i> Seferihisar, İzmir</p>
-                </div>
+                <a href="https://www.instagram.com/halklisseferihisar/" class="contact-link"><i class="fab fa-instagram"></i> @halklisseferihisar</a>
+                <p class="contact-link"><i class="fas fa-envelope"></i> info@halklisseferihisar.org</p>
+                <p class="contact-link"><i class="fas fa-map-marker-alt"></i> Seferihisar / İZMİR</p>
             </div>
             <div class="footer-box reveal">
                 <h3>KONUMUMUZ</h3>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25065.123456789!2d26.8385!3d38.1969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb954000000000%3A0x0!2zU2VmZXJpaGlzYXI!5e0!3m2!1str!2str!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <iframe class="map-frame" src="http://googleusercontent.com/maps.google.com/6" allowfullscreen="" loading="lazy"></iframe>
             </div>
-        </div>
-        <div style="margin-top: 50px; text-align: center; border-top: 1px solid #222; padding-top: 20px;">
-            <p style="color: #e30113; font-weight: 800;">Halk-Lis Seferihisar</p>
-            <div style="font-size: 0.8rem; color: #444; margin-top: 10px;">
-                © 2026 Tasarlayan: <a href="https://www.instagram.com/33ege35/" target="_blank" style="color: #e30113; text-decoration: none; font-weight: 800;">H. Ege KASAPOĞLU</a>
+            <div class="footer-box reveal" style="text-align: right;">
+                <h3>TASARIM</h3>
+                <p style="font-size: 0.8rem; color: #444;">© 2026 Gelecek Biziz</p>
+                <a href="https://www.instagram.com/33ege35/" target="_blank" style="color: #e30113; text-decoration: none; font-weight: 800;">H. Ege KASAPOĞLU</a>
             </div>
         </div>
     </footer>
 
     <div id="joinModal" class="modal">
         <div class="modal-content">
-            <span style="position:absolute; right:20px; top:10px; font-size:2.5rem; cursor:pointer;" onclick="closeModal()">×</span>
-            <h3 style="color:#e30113; text-align:center; margin-bottom:20px; font-weight:800;">BİZE KATIL</h3>
+            <span style="position: absolute; right: 20px; top: 10px; font-size: 2rem; cursor: pointer;" onclick="closeModal()">×</span>
+            <h2 style="color: #e30113; margin-bottom: 20px;">BİZE KATIL</h2>
             <form action="https://formspree.io/f/xaqllkyb" method="POST">
                 <input type="text" name="Ad" class="contact-input" placeholder="Ad Soyad" required>
                 <input type="tel" name="Tel" class="contact-input" placeholder="Telefon" required>
-                <input type="text" name="Okul" class="contact-input" placeholder="Okul" required>
-                <button type="submit" style="width:100%; padding:14px; background:#e30113; color:#fff; border:none; font-weight:800; border-radius:10px; cursor:pointer;">BAŞVUR</button>
+                <button type="submit" style="width: 100%; padding: 14px; background: #e30113; color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer;">BAŞVUR</button>
             </form>
         </div>
     </div>
 
     <script>
-        // RASTGELE SÖZ SİSTEMİ
+        // SSS
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => item.parentElement.classList.toggle('active'));
+        });
+
+        // Rastgele Söz Sistemi
         const quotes = [
-            "Gençler! Benim gelecekteki emellerimi tahakkuk ettirecek gençler! Bir gün bu memleketi sizin gibi zeki bir gençliğe bırakacağımdan dolayı çok memnunum.",
-            "Yükselen yeni nesil, istikbal sizsiniz. Cumhuriyeti biz kurduk, onu yükseltecek ve yaşatacak sizsiniz.",
-            "Biz her şeyi gençliğe bırakacağız... O gençlik ki hiçbir şeyi unutmayacaktır; geleceğin ümidi, ışığı odur.",
             "Bütün ümidim gençliktedir.",
-            "Ey Türk Gençliği! Birinci vazifen; Türk istiklalini, Türk Cumhuriyetini, ilelebet muhafaza ve müdafaa etmektir.",
+            "Yükselen yeni nesil, istikbal sizsiniz. Cumhuriyeti biz kurduk, onu yükseltecek ve yaşatacak sizsiniz.",
+            "Ey Türk gençliği! Birinci vazifen; Türk istiklalini, Türk cumhuriyetini, ilelebet muhafaza ve müdafaa etmektir.",
             "Muhtaç olduğun kudret, damarlarındaki asil kanda mevcuttur!",
             "Eğitimdir ki bir milleti ya hür, bağımsız, şanlı, yüksek bir topluluk halinde yaşatır; ya da esaret ve sefalete terk eder."
         ];
         document.getElementById('random-quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
 
-        // MODAL VE MÜZİK
+        // Sayaç Animasyonu
+        const counter = document.querySelector('.stat-number');
+        const target = +counter.getAttribute('data-target');
+        let current = 0;
+        const update = () => {
+            if(current < target) {
+                current += 5;
+                counter.innerText = current;
+                setTimeout(update, 30);
+            } else { counter.innerText = target; }
+        };
+        update();
+
+        // Geri Sayım
+        setInterval(() => {
+            const diff = new Date('2026-04-23') - new Date();
+            const d = Math.floor(diff / 864e5), h = Math.floor((diff % 864e5) / 36e5), m = Math.floor((diff % 36e5) / 6e4), s = Math.floor((diff % 6e4) / 1000);
+            document.getElementById('timer').innerText = `${d} GÜN ${h} SAAT ${m} DK ${s} SN`;
+        }, 1000);
+
         function openModal() { document.getElementById('joinModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('joinModal').style.display = 'none'; }
+        
         const mars = document.getElementById('mars');
         function toggleMusic() {
             const icon = document.getElementById('music-icon');
-            if (mars.paused) { mars.play(); icon.classList.replace('fa-play', 'fa-pause'); }
-            else { mars.pause(); icon.classList.replace('fa-pause', 'fa-play'); }
+            if(mars.paused) { mars.play(); icon.className = 'fas fa-pause'; }
+            else { mars.pause(); icon.className = 'fas fa-play'; }
         }
 
-        // GERİ SAYIM
-        const targetDate = new Date('April 23, 2026 00:00:00').getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById('timer').innerHTML = `${d} GÜN ${h} SAAT ${m} DK ${s} SN`;
-        }, 1000);
-
-        // KAYDIRINCA GELEN ANİMASYONLAR
-        ScrollReveal().reveal('.reveal', { 
-            delay: 200, 
-            distance: '50px', 
-            origin: 'bottom', 
-            duration: 1000,
-            interval: 100,
-            opacity: 0,
-            scale: 0.9
-        });
+        ScrollReveal().reveal('.reveal', { delay: 200, distance: '40px', origin: 'bottom', duration: 800 });
     </script>
 </body>
 </html>
